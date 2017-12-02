@@ -1,7 +1,14 @@
+<script src="../cart/cart.item.ts"></script><h4 class="page-header">Products</h4>
+<!--<div *ngIf="addedProduct" class="alert alert-success">
+  {{addedProduct}} added to chart
+</div>-->
 <div>
   <ul class="list">
     <li *ngFor="let product of products" class="list-group-item">
-    {{product.productName}}
+      <button (click)="addToCart(product)" class="btn btn-xs btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>Add to Cart</button>
+    <strong><h5>{{product.productName}}</h5></strong>
+      <p>{{product.quantityPerUnit}}</p>
+      <h6>{{product.unitPrice}}</h6>
     </li>
   </ul>
 </div>

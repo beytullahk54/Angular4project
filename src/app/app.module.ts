@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from "@angular/forms"
 import {HttpModule} from "@angular/http"
 
+import{SimpleNotificationsModule,NotificationsService} from 'angular2-notifications'
+
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
@@ -28,10 +30,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
   imports: [
     BrowserModule,
       FormsModule,
-      HttpModule
+      HttpModule,
+      SimpleNotificationsModule.forRoot()
   ],
   providers: [
-      {provide:"apiUrl",useValue:"http://northwindapi.azurewebsites.net/api"}
+      {provide:"apiUrl",useValue:"http://northwindapi.azurewebsites.net/api"},
+      NotificationsService
   ],
   bootstrap: [AppComponent]
 })
